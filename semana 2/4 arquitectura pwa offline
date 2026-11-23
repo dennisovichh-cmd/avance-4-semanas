@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PWA Offline</title>
+</head>
+<body>
+
+  <h1>Mi aplicacion PWA</h1>
+  <p>Esta pagina puede guardar recursos para usar offline.</p>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => console.log("Service Worker registrado"))
+        .catch(error => console.log(error));
+    }
+  </script>
+
+</body>
+</html>

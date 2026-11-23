@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi PWA</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+    }
+
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 20px;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .card {
+      background: lightblue;
+      padding: 30px;
+      flex: 1;
+    }
+
+    @media (min-width: 768px) {
+      .contenedor {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mi Aplicacion</h1>
+  </header>
+
+  <main class="contenedor">
+    <section class="card">
+      <h2>Seccion 1</h2>
+      <p>Contenido principal.</p>
+    </section>
+
+    <section class="card">
+      <h2>Seccion 2</h2>
+      <p>Contenido secundario.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mi PWA</p>
+  </footer>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => console.log("PWA lista"))
+        .catch(error => console.log(error));
+    }
+  </script>
+
+</body>
+</html>

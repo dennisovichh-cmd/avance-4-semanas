@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modo oscuro</title>
+  <style>
+    body {
+      background: white;
+      color: black;
+      font-family: Arial;
+      padding: 30px;
+    }
+
+    .oscuro {
+      background: #222;
+      color: white;
+    }
+
+    button {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Modo oscuro</h1>
+  <button onclick="cambiarModo()">Cambiar tema</button>
+
+  <script>
+    function cambiarModo() {
+      document.body.classList.toggle("oscuro");
+    }
+  </script>
+
+</body>
+</html>

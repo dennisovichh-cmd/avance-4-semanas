@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu hamburguesa</title>
+
+  <style>
+    nav {
+      display: none;
+      background: lightgray;
+      padding: 15px;
+    }
+
+    nav.activo {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="abrirMenu()">☰ Menu</button>
+
+  <nav id="menu">
+    <p>Inicio</p>
+    <p>Servicios</p>
+    <p>Contacto</p>
+  </nav>
+
+  <script>
+    function abrirMenu() {
+      document.getElementById("menu")
+        .classList.toggle("activo");
+    }
+  </script>
+
+</body>
+</html>

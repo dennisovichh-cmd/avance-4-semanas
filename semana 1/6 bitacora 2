@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitacora Dia 2</title>
+</head>
+<body>
+
+  <h1>Tareas guardadas</h1>
+
+  <input id="tarea" placeholder="Nueva tarea">
+  <button onclick="agregar()">Guardar</button>
+
+  <ul id="lista"></ul>
+
+  <script>
+    let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+
+    function mostrar() {
+      let lista = document.getElementById("lista");
+      lista.innerHTML = "";
+
+      tareas.forEach(tarea => {
+        let li = document.createElement("li");
+        li.textContent = tarea;
+        lista.appendChild(li);
+      });
+    }
+
+    function agregar() {
+      let texto = document.getElementById("tarea").value;
+
+      if (texto !== "") {
+        tareas.push(texto);
+        localStorage.setItem("tareas", JSON.stringify(tareas));
+
+        document.getElementById("tarea").value = "";
+        mostrar();
+      }
+    }
+
+    mostrar();
+  </script>
+
+</body>
+</html>

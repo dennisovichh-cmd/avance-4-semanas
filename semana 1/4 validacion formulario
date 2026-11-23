@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validacion</title>
+</head>
+<body>
+
+  <h1>Registro</h1>
+
+  <form onsubmit="validar(event)">
+    <input id="nombre" placeholder="Nombre">
+    <input id="correo" placeholder="Correo">
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="mensaje"></p>
+
+  <script>
+    function validar(event) {
+      event.preventDefault();
+
+      let nombre = document.getElementById("nombre").value;
+      let correo = document.getElementById("correo").value;
+      let mensaje = document.getElementById("mensaje");
+
+      if (nombre === "" || correo === "") {
+        mensaje.textContent = "Completa todos los campos";
+      } else {
+        mensaje.textContent = "Formulario enviado correctamente";
+      }
+    }
+  </script>
+
+</body>
+</html>

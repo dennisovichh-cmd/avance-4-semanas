@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acordeon</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    .contenido {
+      display: none;
+      padding: 10px;
+      background: lightgray;
+    }
+
+    .tema {
+      cursor: pointer;
+      padding: 10px;
+      background: steelblue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Temas</h1>
+
+  <div class="tema">Tema 1</div>
+  <div class="contenido">Contenido del tema 1</div>
+
+  <div class="tema">Tema 2</div>
+  <div class="contenido">Contenido del tema 2</div>
+
+  <script>
+    $(".tema").click(function() {
+      $(this).next(".contenido").slideToggle();
+    });
+  </script>
+
+</body>
+</html>

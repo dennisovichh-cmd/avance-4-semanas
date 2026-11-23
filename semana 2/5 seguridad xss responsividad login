@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Seguro</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    .login {
+      max-width: 350px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid gray;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 600px) {
+      .login {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login">
+    <h1>Iniciar sesion</h1>
+
+    <input id="usuario" placeholder="Usuario">
+    <input id="clave" type="password" placeholder="Contraseña">
+
+    <button onclick="login()">Entrar</button>
+
+    <p id="mensaje"></p>
+  </div>
+
+  <script>
+    function login() {
+      let usuario = document.getElementById("usuario").value.trim();
+      let clave = document.getElementById("clave").value;
+      let mensaje = document.getElementById("mensaje");
+
+      if (usuario === "" || clave === "") {
+        mensaje.textContent = "Completa los campos";
+      } else {
+        mensaje.textContent = "Datos ingresados correctamente";
+      }
+    }
+  </script>
+
+</body>
+</html>

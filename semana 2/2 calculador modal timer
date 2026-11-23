@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora y timer</title>
+</head>
+<body>
+
+  <h1>Calculadora</h1>
+
+  <input type="number" id="num1" placeholder="Numero 1">
+  <input type="number" id="num2" placeholder="Numero 2">
+
+  <button onclick="sumar()">Sumar</button>
+
+  <p id="resultado"></p>
+
+  <h2>Temporizador</h2>
+
+  <p id="tiempo">10</p>
+  <button onclick="iniciar()">Iniciar</button>
+
+  <script>
+    function sumar() {
+      let a = Number(document.getElementById("num1").value);
+      let b = Number(document.getElementById("num2").value);
+
+      document.getElementById("resultado").textContent =
+        "Resultado: " + (a + b);
+    }
+
+    function iniciar() {
+      let tiempo = 10;
+      document.getElementById("tiempo").textContent = tiempo;
+
+      let reloj = setInterval(function() {
+        tiempo--;
+        document.getElementById("tiempo").textContent = tiempo;
+
+        if (tiempo <= 0) {
+          clearInterval(reloj);
+          alert("Tiempo terminado");
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

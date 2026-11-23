@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Componentes</title>
+</head>
+<body>
+
+  <h1>Componentes Web</h1>
+
+  <mi-componente></mi-componente>
+
+  <script>
+    class MiComponente extends HTMLElement {
+      constructor() {
+        super();
+
+        let sombra = this.attachShadow({ mode: "open" });
+
+        sombra.innerHTML = `
+          <style>
+            .caja {
+              background: lightblue;
+              padding: 20px;
+              border-radius: 10px;
+            }
+          </style>
+
+          <div class="caja">
+            <h2>Componente encapsulado</h2>
+            <p>HTML y CSS independientes.</p>
+          </div>
+        `;
+      }
+    }
+
+    customElements.define("mi-componente", MiComponente);
+  </script>
+
+</body>
+</html>

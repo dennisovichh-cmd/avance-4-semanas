@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitacora Dia 1</title>
+</head>
+<body>
+
+  <h1>Bitacora de tareas</h1>
+
+  <input id="tarea" placeholder="Escribe una tarea">
+  <button onclick="agregar()">Agregar</button>
+
+  <ul id="lista"></ul>
+
+  <script>
+    function agregar() {
+      let texto = document.getElementById("tarea").value;
+
+      if (texto !== "") {
+        let li = document.createElement("li");
+        li.textContent = texto;
+
+        document.getElementById("lista").appendChild(li);
+        document.getElementById("tarea").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>

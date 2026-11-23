@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accesibilidad Web</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #222222;
+      margin: 0;
+    }
+
+    header, main, footer {
+      padding: 20px;
+    }
+
+    header {
+      background: #123456;
+      color: white;
+    }
+
+    button {
+      background: #123456;
+      color: white;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    a {
+      color: #0044cc;
+    }
+
+    a:focus, button:focus, input:focus {
+      outline: 3px solid orange;
+      outline-offset: 3px;
+    }
+
+    .salto {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .salto:focus {
+      left: 10px;
+      top: 10px;
+      background: yellow;
+      color: black;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="salto" href="#contenido">Ir al contenido</a>
+
+  <header>
+    <h1>Pagina accesible</h1>
+    <nav aria-label="Menu principal">
+      <a href="#contenido">Inicio</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <h2>Formulario</h2>
+
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text">
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p>Usa el teclado para navegar por la pagina.</p>
+  </main>
+
+  <footer>
+    <p>Mi pagina web</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Componentes</title>
+</head>
+<body>
+
+  <h1>Mi componente</h1>
+
+  <mi-tarjeta></mi-tarjeta>
+
+  <script>
+    class MiTarjeta extends HTMLElement {
+      constructor() {
+        super();
+
+        let sombra = this.attachShadow({ mode: "open" });
+
+        sombra.innerHTML = `
+          <style>
+            div {
+              background: lightblue;
+              padding: 20px;
+              border-radius: 10px;
+            }
+          </style>
+
+          <div>
+            <h2>Tarjeta encapsulada</h2>
+            <p>Este es un componente independiente.</p>
+          </div>
+        `;
+      }
+    }
+
+    customElements.define("mi-tarjeta", MiTarjeta);
+  </script>
+
+</body>
+</html>

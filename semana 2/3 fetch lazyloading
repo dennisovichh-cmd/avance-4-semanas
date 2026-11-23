@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch y Lazy Loading</title>
+</head>
+<body>
+
+  <h1>Usuarios</h1>
+
+  <button onclick="cargar()">Cargar usuarios</button>
+  <div id="usuarios"></div>
+
+  <h2>Imagen con Lazy Loading</h2>
+
+  <img
+    src="https://picsum.photos/400/200"
+    loading="lazy"
+    alt="Imagen"
+  >
+
+  <script>
+    function cargar() {
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+          let contenedor = document.getElementById("usuarios");
+          contenedor.innerHTML = "";
+
+          datos.forEach(usuario => {
+            let p = document.createElement("p");
+            p.textContent = usuario.name;
+            contenedor.appendChild(p);
+          });
+        })
+        .catch(error => console.log(error));
+    }
+  </script>
+
+</body>
+</html>

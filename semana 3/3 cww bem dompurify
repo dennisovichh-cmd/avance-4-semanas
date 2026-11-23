@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BEM y DOMPurify</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    .card {
+      padding: 20px;
+      background: lightgray;
+    }
+
+    .card__titulo {
+      color: blue;
+    }
+
+    .card__texto {
+      font-size: 16px;
+    }
+
+    .card--destacada {
+      border: 2px solid orange;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card card--destacada">
+    <h2 class="card__titulo">Mi tarjeta BEM</h2>
+    <p class="card__texto">Ejemplo de estructura BEM.</p>
+  </div>
+
+  <h2>DOMPurify</h2>
+
+  <input id="texto" placeholder="Escribe HTML">
+  <button onclick="mostrar()">Mostrar</button>
+
+  <div id="resultado"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.6/purify.min.js"></script>
+
+  <script>
+    function mostrar() {
+      let texto = document.getElementById("texto").value;
+
+      let limpio = DOMPurify.sanitize(texto);
+
+      document.getElementById("resultado").innerHTML = limpio;
+    }
+
+    // Registrar Service Worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+
+</body>
+</html>

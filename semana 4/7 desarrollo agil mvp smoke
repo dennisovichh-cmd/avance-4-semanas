@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVP - Smoke Testing</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+
+    li {
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mi MVP: Lista de tareas</h1>
+
+  <input id="tarea" placeholder="Nueva tarea">
+  <button onclick="agregar()">Agregar tarea</button>
+
+  <ul id="lista"></ul>
+
+  <script>
+    function agregar() {
+      let texto = document.getElementById("tarea").value.trim();
+
+      if (texto === "") {
+        alert("Escribe una tarea");
+        return;
+      }
+
+      let li = document.createElement("li");
+      li.textContent = texto;
+
+      document.getElementById("lista").appendChild(li);
+      document.getElementById("tarea").value = "";
+    }
+  </script>
+
+</body>
+</html>

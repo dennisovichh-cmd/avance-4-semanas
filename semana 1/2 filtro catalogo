@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filtro catálogo</title>
+</head>
+<body>
+
+  <h1>Productos</h1>
+
+  <button onclick="filtrar('todos')">Todos</button>
+  <button onclick="filtrar('ropa')">Ropa</button>
+  <button onclick="filtrar('tecnologia')">Tecnología</button>
+
+  <div id="productos">
+    <p class="producto ropa">Camisa</p>
+    <p class="producto ropa">Pantalón</p>
+    <p class="producto tecnologia">Celular</p>
+    <p class="producto tecnologia">Laptop</p>
+  </div>
+
+  <script>
+    function filtrar(categoria) {
+      let productos = document.querySelectorAll(".producto");
+
+      productos.forEach(producto => {
+        if (categoria === "todos" ||
+            producto.classList.contains(categoria)) {
+          producto.style.display = "block";
+        } else {
+          producto.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
